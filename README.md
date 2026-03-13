@@ -85,20 +85,17 @@ Cấu trúc:
 
 Type sử dụng:
 
-- feat: thêm tính năng mới.
+- add: thêm tính năng mới.
 - fix: sửa lỗi.
-- docs: cập nhật tài liệu.
 - refactor: cải tổ code, không đổi hành vi.
 - test: thêm/sửa test.
-- chore: công việc cấu hình, bảo trì.
 - style: format code, không đổi logic.
 
 Ví dụ:
 
 ```text
-feat(auth): add google login callback
-fix(cart): correct quantity update logic
-docs(readme): update team workflow
+add(auth): them chuc nang dang nhap google vào login
+fix(cart): sua logic so luong san pham
 ```
 
 ## 5. Quy trình Pull Request, Review và Merge
@@ -108,22 +105,20 @@ docs(readme): update team workflow
 Mỗi PR từ dev/tên vào develop phải ghi rõ:
 
 - Đã làm gì, tính năng/bugfix nào.
-- Ảnh hưởng đến module nào.
-- Cách test nhanh.
 - Có thay đổi database hay không.
 
 ### Điều kiện merge vào develop
 
 - Không còn conflict với develop.
 - Đã xử lý các comment review quan trọng.
-- Đã được Leader (Phạm Nhật Khang) review và approve.
+- Đã được Leader (Phạm Nhật Khang) review và chấp thuận.
 
 ### Merge vào main (release)
 
 Leader merge develop vào main khi:
 
 - Develop đã kiểm thử ổn định.
-- Là các đợt release định kỳ hoặc milestone quan trọng.
+- Là các đợt release định kỳ hoặc cột mốc quan trọng.
 - Tạo tag/release notes để ghi lại phiên bản.
 
 ## 6. Quy tắc đồng bộ database (Bắt buộc)
@@ -131,7 +126,7 @@ Leader merge develop vào main khi:
 Nếu thay đổi bảng/cột/ràng buộc dữ liệu, người thực hiện phải:
 
 1. Tạo hoặc cập nhật file SQL migration trong thư mục database/ của dự án.
-2. Đặt tên file có timestamp rõ ràng.
+2. Đặt tên file có thời gian rõ ràng.
    - Ví dụ: 2026-03-12-add-order-status-column.sql
 3. Mô tả rõ thay đổi DB trong Pull Request:
    - Bảng nào thay đổi.
@@ -142,25 +137,6 @@ Nếu thay đổi bảng/cột/ràng buộc dữ liệu, người thực hiện 
 5. Không merge code liên quan DB nếu chưa có file SQL đi kèm.
 6. Thành viên khác phải pull code và chạy SQL migration trước khi tiếp tục code.
 
-Nguyên tắc vàng:
-
-- Không sửa CSDL âm thầm trên máy cá nhân mà không có file SQL.
-- Không để tình trạng mỗi máy dùng một version schema khác nhau.
-
-## 7. Quản lý task
-
-Nhóm sử dụng GitHub Projects hoặc Trello với trạng thái tối thiểu:
-
-- To Do
-- In Progress
-- In Review
-- Done
-
-Yêu cầu:
-
-- Mỗi task phải có người phụ trách và deadline.
-- Mỗi PR phải liên kết với task tương ứng.
-- Cuối ngày, cập nhật trạng thái để Leader theo dõi tiến độ.
 
 ## 8. Checklist trước khi tạo PR vào develop
 
